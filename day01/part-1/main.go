@@ -32,6 +32,10 @@ func main() {
 		result += num
 	}
 
+	// Check if we encountered any errors with scanning
+	if err := lineScanner.Err(); err != nil {
+		log.Fatal("Error in reading the file: ", err)
+	}
 	// Print the final result
 	fmt.Println("The resulting frequency is: ", result)
 }
